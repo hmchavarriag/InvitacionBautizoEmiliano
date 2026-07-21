@@ -1,0 +1,392 @@
+/* ==========================
+   CONFIGURACIÓN GENERAL
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Segoe UI',Arial,sans-serif;
+    overflow:hidden;
+    height:100vh;
+    background:linear-gradient(180deg,#7ec8ff,#dff5ff,#ffffff);
+}
+
+/* ==========================
+   FONDO
+========================== */
+
+.background{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+}
+
+/* ==========================
+   NUBES
+========================== */
+
+.cloud{
+    position:absolute;
+    background:white;
+    border-radius:100px;
+    opacity:.75;
+    filter:blur(1px);
+}
+
+.cloud:before,
+.cloud:after{
+    content:"";
+    position:absolute;
+    background:white;
+    border-radius:50%;
+}
+
+.cloud1{
+    width:180px;
+    height:60px;
+    top:10%;
+    left:-220px;
+    animation:nube1 40s linear infinite;
+}
+
+.cloud1:before{
+    width:70px;
+    height:70px;
+    top:-30px;
+    left:20px;
+}
+
+.cloud1:after{
+    width:90px;
+    height:90px;
+    top:-40px;
+    left:80px;
+}
+
+.cloud2{
+    width:220px;
+    height:70px;
+    top:35%;
+    left:-300px;
+    animation:nube2 55s linear infinite;
+}
+
+.cloud2:before{
+    width:80px;
+    height:80px;
+    top:-35px;
+    left:30px;
+}
+
+.cloud2:after{
+    width:100px;
+    height:100px;
+    top:-45px;
+    left:100px;
+}
+
+.cloud3{
+    width:160px;
+    height:55px;
+    top:70%;
+    left:-250px;
+    animation:nube3 48s linear infinite;
+}
+
+.cloud3:before{
+    width:60px;
+    height:60px;
+    top:-25px;
+    left:25px;
+}
+
+.cloud3:after{
+    width:80px;
+    height:80px;
+    top:-35px;
+    left:70px;
+}
+
+/* ==========================
+   TARJETA
+========================== */
+
+.card{
+
+    position:relative;
+
+    z-index:10;
+
+    width:90%;
+
+    max-width:470px;
+
+    margin:auto;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    background:rgba(255,255,255,.30);
+
+    backdrop-filter:blur(14px);
+
+    border-radius:25px;
+
+    padding:35px;
+
+    text-align:center;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
+
+    border:1px solid rgba(255,255,255,.5);
+
+}
+
+/* ==========================
+   TEXTOS
+========================== */
+
+h1{
+
+    color:#4f7db5;
+
+    font-size:34px;
+
+    margin-bottom:20px;
+
+}
+
+h2{
+
+    color:#c79b19;
+
+    margin:20px 0;
+
+}
+
+p{
+
+    color:#333;
+
+    line-height:1.8;
+
+    font-size:20px;
+
+}
+
+/* ==========================
+   BOTONES
+========================== */
+
+button{
+
+    margin-top:25px;
+
+    padding:15px 35px;
+
+    border:none;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    transition:.3s;
+
+}
+
+.primary{
+
+    background:#4b8df8;
+
+    color:white;
+
+}
+
+.primary:hover{
+
+    transform:scale(1.05);
+
+    background:#2d73e8;
+
+}
+
+.secondary{
+
+    background:#efefef;
+
+}
+
+.secondary:hover{
+
+    transform:scale(1.05);
+
+}
+
+/* ==========================
+   CRUZ
+========================== */
+
+.cross{
+
+    font-size:70px;
+
+    color:#d7b23a;
+
+    margin-bottom:15px;
+
+    animation:brillo 3s infinite;
+
+}
+
+/* ==========================
+   PALOMAS
+========================== */
+
+.dove{
+
+    position:fixed;
+
+    font-size:34px;
+
+    animation:fly linear infinite;
+
+}
+
+/* ==========================
+   DESTELLOS
+========================== */
+
+.spark{
+
+    position:fixed;
+
+    font-size:18px;
+
+    animation:shine 5s linear infinite;
+
+}
+
+/* ==========================
+   ANIMACIONES
+========================== */
+
+@keyframes nube1{
+
+    from{transform:translateX(0);}
+
+    to{transform:translateX(1600px);}
+
+}
+
+@keyframes nube2{
+
+    from{transform:translateX(0);}
+
+    to{transform:translateX(1800px);}
+
+}
+
+@keyframes nube3{
+
+    from{transform:translateX(0);}
+
+    to{transform:translateX(1700px);}
+
+}
+
+@keyframes fly{
+
+    from{
+
+        transform:translateX(-150px);
+
+    }
+
+    to{
+
+        transform:translateX(120vw);
+
+    }
+
+}
+
+@keyframes shine{
+
+    0%{
+
+        opacity:0;
+
+        transform:translateY(-20px);
+
+    }
+
+    50%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:translateY(100vh);
+
+    }
+
+}
+
+@keyframes brillo{
+
+    0%,100%{
+
+        text-shadow:0 0 5px gold;
+
+    }
+
+    50%{
+
+        text-shadow:0 0 25px gold;
+
+    }
+
+}
+
+/* ==========================
+   CELULAR
+========================== */
+
+@media(max-width:600px){
+
+.card{
+
+    padding:25px;
+
+}
+
+h1{
+
+    font-size:28px;
+
+}
+
+p{
+
+    font-size:18px;
+
+}
+
+button{
+
+    width:100%;
+
+}
+
+}
